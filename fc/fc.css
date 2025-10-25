@@ -96,7 +96,7 @@ html, body {
 .console-wrapper.collapsed .collapsed-view { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .collapsed-block { background: var(--bg-section); border: 1px solid var(--border-section); border-radius: 6px; padding: 10px 12px; }
 .collapsed-title { font-family: var(--font-header); font-size: 1.5em; color: var(--text-header); margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.console-wrapper.fixed-layout .expanded-view { height: 80vh; overflow-y: auto; padding-right: 8px; scrollbar-width: thin; scrollbar-color: var(--primary-color) rgba(0,0,0,0.2); }
+.console-wrapper.fixed-layout .expanded-view { height: 77vh; overflow-y: auto; padding-right: 8px; scrollbar-width: thin; scrollbar-color: var(--primary-color) rgba(0,0,0,0.2); }
 .console-wrapper.fixed-layout .expanded-view::-webkit-scrollbar { width: 6px; }
 .console-wrapper.fixed-layout .expanded-view::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); border-radius: 3px; }
 .console-wrapper.fixed-layout .expanded-view::-webkit-scrollbar-thumb { background-color: var(--primary-color); border-radius: 3px; }
@@ -198,7 +198,7 @@ html, body {
 .log-title { margin: 0 0 8px 4px; color: var(--text-main); font-size: 1em; font-weight: bold; }
 .log-box {
     background: rgba(0,0,0,0.4); border-left: 4px solid var(--primary-color); padding: 8px 12px;
-    max-height: 3.8rem;
+    max-height: 3.7rem;
     overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--primary-color) rgba(0,0,0,0.2);
 }
 .log-box::-webkit-scrollbar { width: 6px; }
