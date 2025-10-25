@@ -1,29 +1,24 @@
-// console.js (V11 - 大神架构版)
 (function() {
-    // 检查是否在SillyTavern扩展环境中
     if (typeof getChatMessages === 'undefined' || typeof getCurrentMessageId === 'undefined') {
         document.getElementById('output-container').innerHTML = '<p style="color:red;">错误：未检测到SillyTavern API。此脚本只能作为SillyTavern扩展运行。</p>';
         return;
     }
 
-    // 从当前消息中提取XML数据
     let rawXmlString = '';
     try {
         const currentMessage = getChatMessages(getCurrentMessageId())[0];
-        // 使用正则表达式从消息内容中匹配<fate-console>标签内的所有内容
-        const match = currentMessage.message.match(/<fate-console>([\s\S]*?)<\/fate-console>/);
+        const match = currentMessage.message.match(/<fate_console>([\s\S]*?)<\/fate_console>/);
 
         if (match && match[1]) {
             rawXmlString = '<root>' + match[1].trim() + '</root>';
         } else {
-            // 如果没有匹配到，则不渲染任何东西，直接静默退出
-            // 这样可以避免在没有控制台输出的回合里，之前的控制台还一直显示
+
              document.getElementById('output-container').innerHTML = '';
             return; 
         }
     } catch (e) {
         console.error("无法从消息中获取或解析数据:", e);
-        return; // 获取失败则不渲染
+        return; 
     }
 
 
@@ -43,7 +38,6 @@
             xuanhuan: { tab1: "万象录", tab2: "神魂谱", worldStatus: "位面法则", collapsedCharTitle: "神魂掠影", collapsedWorldTitle: "位面一览", journal: "命运之谕", factions: "神魔序列", inventory: "虚空之戒", nearby: "异界来客", bonded: "魂之共鸣", logTitle: "虚空回响:", labels: { alignment: "法则:", power: "等阶:", abilities: "权能:", titles: "真名:", effects: "律令:", equipment: "神器:", items: "圣物:", currency: "晶核:", time: "纪元:", location: "界域:", environment: "元素:", dynamics: "法则:", questMain: "天命:", questSide: "奇遇:", npcPower: "战力:" } }
         };
         
-        // --- 核心逻辑不变，从这里开始和之前几乎一样 ---
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(rawXmlString, "text/xml");
         if (xmlDoc.querySelector("parsererror")) throw new Error("XML Parsing Error.");
@@ -228,3 +222,4 @@
         outputContainer.innerHTML = `<div style="border:2px solid red; padding:10px; color:red; background:#221111; font-family:monospace;"><strong>[命运终端渲染失败]</strong><br>${e.message.replace(/</g, '&lt;')}</div>`;
     }
 })();
+
