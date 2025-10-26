@@ -27,7 +27,6 @@
         const STORAGE_KEY = 'fate_console_ui_state';
         const currentState = { theme: 'gufeng', collapsed: false, layout: 'diffusion' };
         const THEME = { 
-        const THEME = { 
             COLLAPSE_TEXT: "隐匿命轮", EXPAND_TEXT: "窥见天机", COLLAPSE_ICON: "❖", EXPAND_ICON: "◈",
             LAYOUT_FIXED_TEXT: "伸缩自如", LAYOUT_DIFFUSION_TEXT: "能屈能伸", LAYOUT_FIXED_ICON: "⇳", LAYOUT_DIFFUSION_ICON: "↕"
         };
@@ -224,5 +223,6 @@
         outputContainer.innerHTML = `<div style="border:2px solid red; padding:10px; color:red; background:#221111; font-family:monospace;"><strong>[命运终端渲染失败]</strong><br>${e.message.replace(/</g, '&lt;')}</div>`;
     }
 })();
+
 
 
