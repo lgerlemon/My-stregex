@@ -21,7 +21,6 @@
         return; 
     }
 
-
     const outputContainer = document.getElementById('output-container');
     try {
         const STORAGE_KEY = 'fate_console_ui_state';
@@ -36,7 +35,6 @@
                 minsu: { tab1: "风物志", tab2: "异闻录", worldStatus: "四时八节", collapsedCharTitle: "烛龙之影", collapsedWorldTitle: "辰光一卜", journal: "乡野奇谭", factions: "三教九流", inventory: "百宝褡裢", nearby: "市井群像", bonded: "宿缘牵绊", logTitle: "口耳余韵:", labels: { alignment: "情理:", power: "命格:", abilities: "手艺:", titles: "浑号:", effects: "兆象:", equipment: "法器:", items: "杂物:", currency: "俗资:", time: "时辰:", location: "地头:", environment: "风水:", dynamics: "闲话:", questMain: "诡事:", questSide: "奇闻:", npcPower: "斤两:" } },
                 wuxia: { tab1: "武林谱", tab2: "恩仇录", worldStatus: "江湖风云", collapsedCharTitle: "肝胆昆仑", collapsedWorldTitle: "风云一望", journal: "江湖悬赏", factions: "门派帮会", inventory: "英雄行囊", nearby: "江湖过客", bonded: "生死之交", logTitle: "江湖余波:", labels: { alignment: "道义:", power: "功力:", abilities: "武学:", titles: "绰号:", effects: "境况:", equipment: "兵甲:", items: "奇物:", currency: "盘缠:", time: "时日:", location: "所在:", environment: "景致:", dynamics: "风波:", questMain: "命途:", questSide: "萍踪:", npcPower: "功力:" } },
                 xuanhuan: { tab1: "万象录", tab2: "神魂谱", worldStatus: "位面法则", collapsedCharTitle: "界旅心灯", collapsedWorldTitle: "位面一窥", journal: "命运之谕", factions: "神魔序列", inventory: "虚空之戒", nearby: "异界来客", bonded: "魂之共鸣", logTitle: "因果残响:", labels: { alignment: "宿命:", power: "位阶:", abilities: "权能:", titles: "尊名:", effects: "迹印:", equipment: "神器:", items: "圣物:", currency: "奇珍:", time: "纪元:", location: "界域:", environment: "万象:", dynamics: "星流:", questMain: "命轨:", questSide: "星尘:", npcPower: "位阶:" } }
-        };
         };
         
         const parser = new DOMParser();
@@ -223,6 +221,7 @@
         outputContainer.innerHTML = `<div style="border:2px solid red; padding:10px; color:red; background:#221111; font-family:monospace;"><strong>[命运终端渲染失败]</strong><br>${e.message.replace(/</g, '&lt;')}</div>`;
     }
 })();
+
 
 
 
